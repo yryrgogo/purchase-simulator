@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "bayes"
+version = "0.1.0"
+description = ""
+authors = ["yryrgogo <yryrgogo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "^2.0.0"
+pyro-ppl = "^1.8.4"
+streamlit = "^1.20.0"
+altair = "^4.2.2"
+vega-datasets = "^0.9.0"
+watchdog = "^2.3.1"
+pendulum = "^2.1.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+pyright = "^1.1.299"
+pytest = "^7.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
