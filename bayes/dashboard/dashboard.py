@@ -1,5 +1,6 @@
 import streamlit as st
 import torch
+
 from dashboard.form import create_form
 from simulation.user_purchase_per_store import UserPurchasePerStoreSimulator
 from simulation.utils import get_weekday_name
@@ -19,7 +20,9 @@ def create_dashboard():
         simulator = UserPurchasePerStoreSimulator(user_id)
         simulator.simulate()
 
-        for weekday, purchase_count in enumerate(simulator.simulated_weekday_purchase_counts):
+        for weekday, purchase_count in enumerate(
+            simulator.simulated_weekday_purchase_counts
+        ):
             st.write(f"{get_weekday_name(weekday)}曜日の購買数: {purchase_count}")  # type: ignore
 
         # st.altair_chart(chart, use_container_width=True)

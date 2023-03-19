@@ -1,11 +1,12 @@
 from typing import Any, Dict, List
+
+import altair as alt
+import numpy as np
+import pandas as pd
 import pyro
 import pyro.distributions as dist
 import torch
 from pyro.infer import MCMC, NUTS
-import numpy as np
-import pandas as pd
-import altair as alt
 
 
 class BayesianModel:
@@ -104,13 +105,10 @@ class GammaDist:
     def calculate_gamma_params(
         observed_data: torch.Tensor,
     ) -> tuple[torch.Tensor, torch.Tensor]:
-        # データの平均値を計算
         mean = observed_data.float().mean()
 
-        # データの分散を計算
         var = observed_data.float().var()
 
-        # カンマ分布のパラメーターを計算
         k = mean**2 / var
         theta = mean / var
 

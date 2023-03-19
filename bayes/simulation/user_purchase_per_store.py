@@ -1,10 +1,12 @@
 from typing import List
+
+import numpy as np
+import pandas as pd
 import pendulum
 import torch
+
 from models.user_store_purchase import BayesianModel, PosteriorResult
 from simulation.utils import group_by_weekday
-import pandas as pd
-import numpy as np
 
 
 class UserPurchasePerStoreSimulator:
@@ -13,7 +15,7 @@ class UserPurchasePerStoreSimulator:
     現状は曜日別の購買回数しか出力しない。
     """
 
-    def __init__( self, user_id: str):
+    def __init__(self, user_id: str):
         """
         Parameters
         -------
@@ -114,8 +116,7 @@ class UserPurchasePerStoreSimulator:
         return grouped_by_weekday_tensor
 
     def simulate(self):
-        """
-        """
+        """ """
         num_weeks = 4
         grouped_by_weekday_tensor = self._fetch_daily_data(num_weeks)
 

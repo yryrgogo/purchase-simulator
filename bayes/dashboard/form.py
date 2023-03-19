@@ -6,7 +6,7 @@ def create_form() -> tuple[bool, str | None]:
 
     submitted = False
     with st.form(key="simulation_form"):
-        user_id, selected =  add_user_id_selectbox()
+        user_id, selected = add_user_id_selectbox()
 
         if selected:
             submitted = st.form_submit_button("シミュレーション実行")
@@ -16,6 +16,7 @@ def create_form() -> tuple[bool, str | None]:
             st.form_submit_button("シミュレーション実行", on_click=None)
 
     return submitted, user_id
+
 
 def add_user_id_selectbox():
     st.title("選択フォーム")

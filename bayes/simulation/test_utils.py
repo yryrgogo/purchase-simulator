@@ -1,7 +1,9 @@
 from typing import Any
-import pendulum
+
 import pandas as pd
+import pendulum
 import pytest
+
 from simulation.utils import group_by_weekday
 
 group_by_weekday_test_data = [
